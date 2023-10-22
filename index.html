@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Card Image Update</title>
+</head>
+<body>
+    <div class="conatiner">
+        <div class="card">
+            <h1>MR. Alex</h1>
+            <p>@malexceo</p>
+            <img id="profile_images" src="image.png">
+            <label for="input_file">Upload Image</label>
+            <input id="input_file" type="file" accept="image/jpeg, image/png, image/jpg">
+        </div>
+        
+    </div>
+    <script>
+        const image = document.getElementById("profile_images");
+        const input = document.getElementById("input_file");
+        input.addEventListener('change', () =>{
+            image.src = URL.createObjectURL(input.files[0]);
+        })
+    </script>
+</body>
+</html>
